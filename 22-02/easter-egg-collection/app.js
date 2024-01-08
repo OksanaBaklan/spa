@@ -1,0 +1,1 @@
+require("easter-egg-collection");

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+        p{
+            color:orange;
+            background-color: aqua;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="header" class="new-class">Hej, welcome</h1>
+
+    <h1 class="main">Hej, nice to have you</h1>
+    <h1 class="new-class">Hej, Good morning</h1>
+    <form>
+      <input class="new-class" type="text" name="userName" />
+      <input class= "new-class" type="text" name="age" />
+      <p name="para">Testing Para</p>
+    </form>
+    <p>This is random text</p>
+    <ul>
+      <li>Milk</li>
+      <li>Bread</li>
+      <li>Eggs</li>
+    </ul>
+  </body>
+  <script>
+    const bodyObject = document.body
+    let result = []
+    const printTags = (element) =>{
+
+      const childTags = element.children
+      for(let i=0; i < childTags.length; i++){
+        result.push(childTags[i].tagName)
+        if(childTags.length > 0) printTags(element)
+      }
+
+    }
+    printTags(bodyObject)
+    console.log("result")
+  </script>
+  <!-- internal script -->
+  <script>
+    /* 
+  Different Methods to target Elements in Document Object. */
+
+    // 1. getElementById:
+    /* What it returns? Object
+      const myHeading = document.getElementById('header') */
+    let headerThree = document.getElementById("header");
+    console.log(headerThree);
+
+    // 2. getElementsByName:
+    /* what it will return? Array or Object? =>  Array*/
+    document.getElementsByName("userName")[0].style.cssText =
+      "background-color:green";
+    console.log(document.getElementsByName("userName"));
+    // 3. getElementsByClassName:
+    /* It will return an Array */
+
+    document.getElementsByClassName("main")[0].style.color = "red";
+    console.log(document.getElementsByClassName("main"));
+    // console.log(headerTwo);
+    // nodeList , HTML collection
+
+    //
+    const myPara = document.getElementsByTagName("p");
+    myPara[0].style.cssText = "background-color:yellow";
+    console.log(document.getElementsByTagName("p"));
+    // 4. document.querySelector
+    // it will return an array or an object? it will return the first matching element. Object
+
+    const myQuery = document.querySelector("li");
+    console.log(myQuery);
+    // 5. document.querySelectorAll()
+    const items = document.querySelectorAll("li");
+    console.log(items);
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.backgroundColor = `rgba(${Math.random() * 255},${
+        Math.random() * 180
+      },${Math.random() * 255},${0.75})`;
+    }
+  </script>
+</html>

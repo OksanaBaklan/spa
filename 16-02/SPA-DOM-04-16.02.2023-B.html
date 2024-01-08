@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url('https://placekitten.com/1000/1400');
+            background-size: cover;
+        }
+        .dot {
+            width: 2em; height: 2em;
+            background: lightcyan;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        // Register an event listener into the document itself.
+        // When the browser dispatches the DOMContenLoaded ecent, we
+        // will run our callback function
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM content has loaded")
+
+            // When the document body is clicked
+            document.body.addEventListener("click", function(e) {
+                console.log({ x: e.clientX, y: e.clientY, target: e.target })
+
+                // Add a dot where it was clicked
+                const dot = document.createElement("div")
+                dot.classList.add("dot")
+                dot.style.left = e.clientX + "px"
+                dot.style.top = e.clientY + "px"
+                document.body.append(dot)
+            })
+
+            // What if this was a real website and instead of
+            // drawing blue circles, we would save each click
+            // location into a database?
+            // We have kind of created a click heatmap
+            // https://images.saymedia-content.com/.image/t_share/MTc2NDYwMjM4NjIxNTgzMzIy/heat-map.png
+
+            // Next, let's add a "keypress" event to test keyboard events
+            document.body.addEventListener("keypress", (e) => {
+                console.log(e.key)
+            })
+        })
+    </script>
+
+</head>
+<body><div class="dot"></div></body>
+</html>

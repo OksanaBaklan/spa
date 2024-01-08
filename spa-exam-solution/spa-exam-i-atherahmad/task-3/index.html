@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 3</title>
+    </head>
+
+    <body>
+        <div>
+            <input type="text" value="First input">
+        </div>
+        <div>
+            <input type="text" value="Second input">
+        </div>
+
+        <script>
+          
+          // Selecting all the inputs
+
+          const allInputFields = document.querySelectorAll('input')
+
+          allInputFields.forEach(input => {
+            input.addEventListener("focus",  ()=>{
+                input.style.border = "5px red solid"
+            })
+            // previous event listener attached till here
+            // now we are going to attach the second event listener
+            // for the case of blur event
+
+            input.addEventListener("blur", ()=>{
+                input.style.border = ""
+            })
+
+
+        })
+      
+        </script>
+    </body>
+
+</html>

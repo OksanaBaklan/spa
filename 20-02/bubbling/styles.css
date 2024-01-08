@@ -1,0 +1,24 @@
+body{
+    background-color: antiquewhite;
+    height: 90vh;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(157, 215, 195);
+    height: 400px;
+    width: 400px;
+    flex-direction: column;
+}
+.sub-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(196, 177, 214);
+    height: 200px;
+    width: 200px;
+}
+#mybtn{
+    background-color: brown;
+}

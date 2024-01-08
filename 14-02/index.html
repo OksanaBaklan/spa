@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>DOM</title>
+  </head>
+
+  <script>
+    console.log("hi");
+  </script>
+  <body>
+    <div>
+      <i class="page-style">Light theme ☀️</i>
+      <input
+        type="checkbox"
+        onchange="themeChange()"
+        name="mood"
+        id="light-dark"
+      />
+    </div>
+    <header>
+      <nav>
+        <ul id="menuList">
+          <li>Home</li>
+          <li class="highlight">Products</li>
+          <li>About us</li>
+          <li>Our story</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="main">Hej, welcome back :)</h1>
+      <section>
+        <article>
+          <h4 class="highlight">Something here</h4>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus, nihil.
+          </div>
+        </article>
+        <article>
+          <h4>Cities I haven't visit yet</h4>
+          <ol>
+            <li>Rotterdam</li>
+            <li>London</li>
+            <li class="highlight">Koala Lumpur</li>
+          </ol>
+        </article>
+        <div class="container">
+          Hi I am div <br />
+          <span><!-- here will ne our innerHtml--></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h6>Hej, here is random text</h6>
+      </section>
+    </main>
+    <footer>
+      <h6 class="container">Made with ❤️ by me</h6>
+    </footer>
+  </body>
+  <script src="./js/index.js"></script>
+</html>

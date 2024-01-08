@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 5</title>
+        <style>
+            td { border: 1px solid; }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </table>
+        <button>Calculate new column</button>
+        <script>
+            // ???
+            const btn = document.querySelector("button")
+            const table = document.querySelector('table')
+// Solution from Alvaro
+
+            btn.addEventListener("click", ()=>{
+                let sum = 0;
+                for(let i=0, row; row = table.rows[i]; i++){
+                    for(let j=0, col; col = row.cells[j]; j++){
+                        //sum += Number(col.innerHTML)
+                        sum += +col.innerText
+                    }
+
+                    //row.insertCell(-1).innerHTML = `${sum}`;
+
+                    row.insertCell(-1).innerText = sum
+                    sum = 0;
+                }
+
+            })
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 7</title>
+    </head>
+
+    <body>
+        <p>Input radius value and get the volume of a sphere.</p>
+        <form action="https://ddg.gg/" method="post" id="MyForm">
+            <label for="radius">Radius</label>
+            <input type="text" name="radius" id="radius" required>
+            <button>Calculate volume</button>
+        </form>
+
+        <script>
+            // ???
+            const form = document.querySelector("form")
+            const radius = document.querySelector('#radius')
+
+            form.addEventListener('submit', (e)=>{
+                e.preventDefault()
+                const volume = (4 * Math.PI * Math.pow(+radius.value, 3)) / 3 
+                alert(volume)
+            })
+        </script>
+    </body>
+
+</html>

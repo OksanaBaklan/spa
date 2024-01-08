@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="text" id="user" />
+      <button id="get">GET</button>
+    </form>
+    <img id="avatar" width="300" src="" alt="" />
+
+    <script>
+      let user = document.getElementById("user");
+      let button = document.getElementById("get");
+
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        //   console.log(user.value);
+        fetch(`https://api.github.com/users/${user.value}`)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            document.getElementById("avatar").src = json.avatar_url;
+          })
+          .catch((err) => console.log(err));
+      });
+      //------------------------ async/await -------------------
+      //solution with Async/await
+
+      //   button.addEventListener("click", async (e) => {
+      //     e.preventDefault();
+      //     //   console.log(user.value);
+      //     try {
+      //       const userName = await fetch(
+      //         `https://api.github.com/users/${user.value}`,
+      //       );
+      //       const userJson = await userName.json();
+      //       document.getElementById("avatar").src = userJson.avatar_url;
+      //     } catch (error) {
+      //       console.log("Error in fetch: ", error);
+      //     }
+      //   });
+    </script>
+  </body>
+</html>

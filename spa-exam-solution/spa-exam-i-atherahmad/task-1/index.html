@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 1</title>
+    </head>
+
+    <body>
+        <p id="text">Lorem ipsum...</p>
+        <button id="styler">Style</button>
+
+        <script>
+            const myParagraph = document.querySelector('#text')
+            const btn = document.querySelector('#styler')
+
+            btn.addEventListener('click', ()=>{
+                myParagraph.style.cssText = "color:red; font-size: 20px; font-family: Monospace"
+            })
+        </script>
+    </body>
+
+</html>

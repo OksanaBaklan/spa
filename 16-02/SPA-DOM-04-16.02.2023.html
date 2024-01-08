@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- Emmet: input:range*3 -->
+        <input type="range" id="R" min="0" max="255" step="1" value="255">
+        <input type="range" id="G" min="0" max="255" step="1" value="200">
+        <input type="range" id="B" min="0" max="255" step="1" value="200">
+    </div>
+
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        const r = document.querySelector("#R")
+        const g = document.querySelector("#G")
+        const b = document.querySelector("#B")
+
+        function handleRGB(event) {
+            if (event) {
+                // Alternatively use "event?.target" - this is called "optional chaining"
+                console.log({ target: event.target, type: event.type, event })
+            }
+            document.body.style.background = `rgb(${r.value}, ${g.value}, ${b.value})`
+        }
+        handleRGB()
+
+        // When the browser notices that the "r" element changes
+        // It will dispatch a "change" event
+        // We will listen to that and run our function
+        r.addEventListener("change", handleRGB)
+        g.addEventListener("change", handleRGB)
+        b.addEventListener("mouseenter", handleRGB)
+        b.addEventListener("change", handleRGB)
+        b.addEventListener("click", handleRGB)
+    </script>
+
+</body>
+</html>

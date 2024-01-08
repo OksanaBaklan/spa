@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task 9</title>
+  </head>
+  <body>
+    <p>
+      <!-- 'Hello developer!' -->
+    </p>
+    <script>
+      // ???
+
+      const paragraph = document.querySelector('p')
+
+    const prompt = () =>{
+      const person = window.prompt("What is your name ?")
+      if(person !== null && person != ""){
+        paragraph.innerHTML = "Hello " + person
+      }
+      else prompt()
+    }
+    document.addEventListener("click", prompt) 
+    prompt()
+
+    </script>
+  </body>
+</html>

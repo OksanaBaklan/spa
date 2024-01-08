@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 8</title>
+    </head>
+
+    <body>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corrupti! Similique ratione cum quod labore voluptatem iure iusto sapiente tempore id reiciendis? Aspernatur officia ad ipsa unde saepe distinctio nostrum?</p>
+        <p>The paragraph above is simply <span>gobbledygook</span>! Nonsense!</p>
+        <p>But sometimes, you need nonsense!</p>
+        
+        <script>
+            /* const spanElement = document.querySelector('span') */
+            const specialWord = document.querySelector("span")
+            const closestParagraph = specialWord.closest("p")
+            closestParagraph.addEventListener('mouseenter', ()=>{
+                specialWord.style.color = "red"
+                specialWord.style.fontWeight = "bold"
+            })
+
+            closestParagraph.addEventListener('mouseout', ()=>{
+                specialWord.style.color = "black"
+                specialWord.style.fontWeight = "normal"
+            })
+        </script>
+    </body>
+
+</html>

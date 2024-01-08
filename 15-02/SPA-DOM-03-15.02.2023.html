@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- #wrapper>#box -->
+    <div id="wrapper">
+        <div id="box">
+            <img src="https://placekitten.com/100/100">
+        </div>
+    </div>
+    <p>
+        This p
+        <img src="https://placekitten.com/80/80" alt="Cat!">
+        contains a cat
+    </p>
+    <script>
+        // Styling an element with JS
+        const wrapper = document.querySelector("div") // This selects the first div on the page
+        wrapper.style.height = "70vh"
+        wrapper.style.display = "grid"
+        wrapper.style.placeItems = "center"
+        wrapper.style.border = "3px solid #ff0000"
+
+        // Let's set the background to a random color! Fun!
+        const random = Math.random()*9999
+        wrapper.style.background = `hsl(${random}, 100%, 90%)` // template literal string
+
+        const box = wrapper.querySelector("#box")
+        box.style.width = "200px"
+        box.style.height = "200px"
+        box.style.display = "grid"
+        box.style.placeItems = "center"
+        box.style.background = `hsl(${random+100}, 100%, 90%)`
+
+        // Get all images in document as a NodeList
+        const imgs = document.querySelectorAll("img")
+        imgs.forEach(img => {
+            // console.log(img.parentElement)
+            if (img.parentElement.tagName === "P") {
+                // img.style.display = "none"
+                img.remove() // deletes element from document
+            }
+        })
+
+        // Traversing the DOM tree
+        const p = document.querySelector("p")
+        console.log(p)
+        console.log(p.children)   // .children is a list of child ELEMENTS
+        console.log(p.childNodes) // .childNodes is a list of child NODES
+        console.log(p.parentElement) // access to parent element
+        console.log(p.previousElementSibling) // access to previous sibling
+        console.log(p.nextElementSibling) // access to next sibling
+
+        p.innerText = "Boogaloo <b>boo</b> hoo hoo" // innerText is available for Elements
+        p.textContent = "Boogaloo <b>boo</b> hoo hoo" // .textContent is available for Nodes
+        p.innerHTML = "No <b>cat</b> any more in this paragraph"
+
+        // This is a sneak peek of tomorrow...
+        document.body.onclick = function() {
+            const sadElement = document.createElement("em") // this only creates the element
+            sadElement.innerText = " why is the cat pic gone :(" // this puts text inside thelement
+            p.append(sadElement) // this adds the element to the DOM
+        }
+    </script>
+</body>
+</html>
